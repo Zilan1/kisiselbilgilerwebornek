@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Başlıksız Belge</title>
+	<style type="text/css">
+		body {background: #f6f6f6; font-family: tahoma}
+		.container {width: 980px; height: 650px; margin: 10px auto; border: 1px dashed #bd652b; padding: 20px 0 20px 40px}
+		section {width: 450px; height: 220px; float: left; margin: 0 40px 60px 0}
+		aside {width: 450px; height: 120px; float: left; margin: 0 40px 60px 0}
+		footer {width: 980px; height: 100px; float: left}
+		.baslikkutu {width: 450px; padding: 0 0 10px 0; margin: 0 0 15px 0; border-bottom: 2px solid #dd9d42; color: #104579; font: bold 19px tahoma}
+		section input, aside input{width: 300px; padding: 5px; border: 1px dashed #a0a0a0; color: #104579; font-size: 14px}
+		section input:hover {border: 1px dashed #bd652b; background: #f0ddbc}
+		input.radyo, input.onay {width: 15px}
+		textarea {width: 930px; height: 65px; padding: 5px; border: 1px solid #ddd; color: #4b4b4b; font-size: 14px}
+		button,input.gonder {width: 100px; padding: 10px 25px; margin:0 30px 20px 0; color: #fff; font-size: 14px; background: #24588f; cursor: pointer; border: none}
+		tr:hover {color: #bd652b}
+		tr:hover .siyah {color: #000}
+		input:focus, te xtarea:focus {outline:none}
+		#askerlik, #digerdil, #digerbeceri  {width: 300px; padding: 5px; border: 1px dashed #a0a0a0; color: #104579; font-size: 14px}
+	</style>
+	
+	<script type="text/javascript">
+	  function askerlikdurumu(deger)
+		{
+			if(document.getElementById(deger).value=="Erkek")
+			   {
+			        document.getElementById("askerlik").type="text";
+			   }
+			else
+				{
+					document.getElementById("askerlik").type="hidden";
+				}
+		}
+		
+		function ackapat(deger)
+		{
+			if(document.getElementById(deger).type=="text")
+			   {
+			        document.getElementById(deger).type="hidden";
+			   }
+			else
+				{
+					document.getElementById(deger).type="text";
+				}
+		}
+		
+		function kapat()
+		{
+			document.getElementById("askerlik").value="";
+			document.getElementById("digerdil").value="";
+			document.getElementById("digerbeceri").value="";
+			document.getElementById("digerilgi").value="";
+			document.getElementById("askerlik").type="hidden";
+			document.getElementById("digerdil").type="hidden";
+			document.getElementById("digerbeceri").type="hidden";
+			document.getElementById("digerilgi").type="hidden";
+		}
+		
+	</script>
+	 
+</head> 
+
+<body>
+	 <form>
+	<div class="container">
+	<section>
+		<div class="baslikkutu">Kişisel Bilgiler</div>
+		<table width="450" height="220">
+    <tr>
+      <td width="145">Ad</td>
+      <td width="5">:</td>
+      <td width="300"><input type="text" maxlength="20" placeholder="Adınızı Giriniz" required="required"></td>
+    </tr>
+    <tr>
+      <td>Soyad</td>
+      <td>:</td>
+      <td><input type="text" placeholder="Soyadınızı Giriniz" required="required"></td>
+    </tr>
+    <tr>
+      <td>Doğum Tarihi</td>
+      <td>:</td>
+      <td><input type="date" placeholder="Doğum Tarihi Giriniz" required="required"></td>
+    </tr>
+    <tr>
+      <td>Telefon</td>
+      <td>:</td>
+      <td><input type="text" pattern="[\(]\d{3}[\)][\s]\d{3}[\s]\d{2}[\s]\d{2}" placeholder="(xxx) xxx xx xx" required="required"></td>
+    </tr>
+    <tr>
+      <td>E-mail</td>
+      <td>:</td>
+      <td><input type="email" placeholder="E-Mail Giriniz" required="required"></td>
+    </tr>
+    <tr>
+      <td>Cinsiyet</td>
+      <td>:</td>
+      <td class="siyah">
+		  <input id="erkek" name="cinsiyet" type="radio" value="Erkek" class="radyo" required="required" onClick="askerlikdurumu(this.id)">Erkek
+		  <input id="kadin" name="cinsiyet" type="radio"  value="Kadın" class="radyo" required="required" onClick="askerlikdurumu(this.id)">Kadın <input id="askerlik" type="hidden" placeholder="Askerlik Durumunu Giriniz">
+		</td>
+    </tr>
+</table>
+
+		</section>
+    <section>
+		<div class="baslikkutu">Eğitim Durumu</div>
+		<table width="450" height="220">
+    <tr>
+      <td width="145">İlkokul</td>
+      <td width="5">:</td>
+      <td width="300"><input type="text" placeholder="Okuduğunuz ilkokulu giriniz." required="required"></td>
+    </tr>
+    <tr>
+      <td>Ortaokul</td>
+      <td>:</td>
+      <td><input type="text" placeholder="Okuduğunuz ortaokulu giriniz." required="required"></td>
+    </tr>
+    <tr>
+      <td>Lise</td>
+      <td>:</td>
+      <td><input type="text" placeholder="Okuduğunuz liseyi giriniz." required="required"></td>
+    </tr>
+    <tr>
+      <td>Üniversite</td>
+      <td>:</td>
+      <td><input type="text" placeholder="Okuduğunuz üniversite giriniz." required="required"></td>
+    </tr>
+    <tr>
+      <td>Yüksek Lisans</td>
+      <td>:</td>
+      <td><input type="text" placeholder="Yüksek lisans yaptığınız üniversiteyi giriniz." required="required"></td>
+    </tr>
+    <tr>
+      <td>Yabancı Dil</td>
+      <td>:</td>
+      <td class="siyah"><input class="onay" type="checkbox" />İngilizce
+		  <input class="onay" type="checkbox" />Almanca
+		  <input class="onay" type="checkbox" />Arapça
+		  <input class="onay" type="checkbox" onclick="ackapat('digerdil')" />Diğer 
+		  <input id="digerdil" type="hidden" placeholder="Diğer bildiğiniz dili giriniz">
+		</td>
+    </tr>
+</table>
+
+		</section>
+	<aside>
+		<div class="baslikkutu">İlgi Alanları</div>
+		<input class="onay" type="checkbox">Sinema<br />
+		<input class="onay" type="checkbox">Tiyatro<br />
+		<input class="onay" type="checkbox">Spor<br />
+		<input class="onay" type="checkbox" onclick="ackapat('digerilgi')">Diğer
+		<input id="digerilgi" type="hidden" placeholder="Diğer ilgi alanınızı giriniz">
+		</aside>
+	<aside>
+		<div class="baslikkutu">Beceriler</div>
+		<input class="onay" type="checkbox">Html<br />
+		<input class="onay" type="checkbox">Css<br />
+		<input class="onay" type="checkbox">Php<br />
+		<input class="onay" type="checkbox">Asp.Net<br />
+		<input class="onay" type="checkbox" onclick="ackapat('digerbeceri')">Diğer
+		<input id="digerbeceri" type="hidden" placeholder="Diğer becerinizi giriniz">
+		</aside>
+	<footer>
+		<div class="baslikkutu">Düşünceleriniz</div>
+		<textarea required="required"></textarea><br /><br />
+		<button>Gönder</button>
+		<input class="gonder" type="reset" onClick="kapat()"> 
+		</footer>
+	</div>
+		 </form>
+</body>
+</html>
